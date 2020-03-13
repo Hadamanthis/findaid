@@ -2,14 +2,26 @@ package br.com.findaid.prototype.model;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class Resposta {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	private String mensagem;
 	private LocalDateTime dataCriacao;
 	private Boolean solucao = false;
 	
+	@ManyToOne
 	private Postagem postagem;
+	
+	@ManyToOne
 	private Usuario autor;
 	
 	public Long getId() {

@@ -1,7 +1,15 @@
 package br.com.findaid.prototype.model;
 
-public class Foto {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
+public class Foto {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	private String nome;
 	private String dados;
